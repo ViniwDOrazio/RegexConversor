@@ -1,0 +1,28 @@
+{
+	"rules":[
+		{
+			"name":"Just One Space In Between",
+			"find":"(\s+)",
+			"replace":" ",
+			"mandatory":false
+		},
+		{
+			"name":"No Space",
+			"find":"(\s+)",
+			"replace":"",
+			"mandatory":false
+		},
+		{
+			"name":"No Space but Single Ones",
+			"find":"(( {2,})|\t|\r|\n)+",
+			"replace":"",
+			"mandatory":false
+		},
+		{
+			"name":"No Space but Single Ones and EndLines",
+			"find":"(( {2,})|\t)+",
+			"replace":"",
+			"mandatory":false
+		}
+	]
+}

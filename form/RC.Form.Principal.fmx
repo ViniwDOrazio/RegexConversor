@@ -1,0 +1,140 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 558
+  ClientWidth = 796
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object pConversionType: TPanel
+    Align = Top
+    Size.Width = 796.000000000000000000
+    Size.Height = 47.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object cbConversionType: TComboBox
+      Align = Client
+      Margins.Left = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Size.Width = 788.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+    object lblConversionType: TLabel
+      Align = Top
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 788.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Conversion Type'
+      TabOrder = 1
+    end
+  end
+  object gpTextos: TGridPanelLayout
+    Align = Client
+    Size.Width = 796.000000000000000000
+    Size.Height = 511.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = pOriginalText
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = Panel1
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    object pOriginalText: TPanel
+      Align = Client
+      Size.Width = 398.000000000000000000
+      Size.Height = 511.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object mmoOriginalText: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Client
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 390.000000000000000000
+        Size.Height = 486.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        OnPaint = mmoOriginalTextPaint
+        Viewport.Width = 386.000000000000000000
+        Viewport.Height = 482.000000000000000000
+      end
+      object lblOriginalText: TLabel
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 4.000000000000000000
+        Size.Width = 390.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Original Text'
+        TabOrder = 0
+      end
+    end
+    object Panel1: TPanel
+      Align = Client
+      Size.Width = 398.000000000000000000
+      Size.Height = 511.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object mmoConversionResult: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Client
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 390.000000000000000000
+        Size.Height = 486.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        OnPaint = mmoOriginalTextPaint
+        Viewport.Width = 386.000000000000000000
+        Viewport.Height = 482.000000000000000000
+      end
+      object lblConversionResult: TLabel
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 4.000000000000000000
+        Size.Width = 390.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Conversion Result'
+        TabOrder = 0
+      end
+    end
+  end
+end

@@ -1,0 +1,10 @@
+{
+	"rules":[
+		{
+			"name":"CR or LF => CRLF",
+			"find":"^(.*)(?:\r(?!\n)|(?<!\r)\n)",
+			"replace":"$1\r\n",
+			"mandatory":true
+		}
+	]
+}

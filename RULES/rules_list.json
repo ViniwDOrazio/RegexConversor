@@ -1,0 +1,1 @@
+[	{		"name":"Endline conversor",		"description": "Endline conversor",		"rule":"./rule_endline.json"	},	{		"name":"Space Supressor",		"description": "Remove all unnecessery space",		"rule":"./rule_spacesupressor.json"	}]
