@@ -8,7 +8,7 @@ uses
 {$M+}
 
 type
-  TItems = class
+  TRuleIndicator = class
   private
     [JSONName('description')]
     FDescription: string;
@@ -22,17 +22,17 @@ type
     property Rule: string read FRule write FRule;
   end;
 
-  TRoot = class(TJsonDTO)
+  TRuleIndicatorList = class(TJsonDTO)
   private
     [JSONName('Items'), JSONMarshalled(False)]
-    FItemsArray: TArray<TItems>;
+    FItemsArray: TArray<TRuleIndicator>;
     [GenericListReflect]
-    FItems: TObjectList<TItems>;
-    function GetItems: TObjectList<TItems>;
+    FItems: TObjectList<TRuleIndicator>;
+    function GetItems: TObjectList<TRuleIndicator>;
   protected
     function GetAsJson: string; override;
   published
-    property Items: TObjectList<TItems> read GetItems;
+    property Items: TObjectList<TRuleIndicator> read GetItems;
   public
     destructor Destroy; override;
   end;
@@ -41,20 +41,20 @@ implementation
 
 { TRoot }
 
-destructor TRoot.Destroy;
+destructor TRuleIndicatorList.Destroy;
 begin
   GetItems.Free;
   inherited;
 end;
 
-function TRoot.GetItems: TObjectList<TItems>;
+function TRuleIndicatorList.GetItems: TObjectList<TRuleIndicator>;
 begin
-  Result := ObjectList<TItems>(FItems, FItemsArray);
+  Result := ObjectList<TRuleIndicator>(FItems, FItemsArray);
 end;
 
-function TRoot.GetAsJson: string;
+function TRuleIndicatorList.GetAsJson: string;
 begin
-  RefreshArray<TItems>(FItems, FItemsArray);
+  RefreshArray<TRuleIndicator>(FItems, FItemsArray);
   Result := inherited;
 end;
 

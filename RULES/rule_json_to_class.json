@@ -1,51 +1,66 @@
-[
-	{
-		"name":"rule_name",
-		"find":"regex",
-		"replace":"text-to-replace",
-		"apply-rules":
-		[
-			"rule_name2",
-			"rule_name3"
-		],
-		"case-conversion-on-replace":true,
-		"case-conversion-options":["upper","lower", "asis"],
-		"default-case-conversion":"upper",
-		"space_size":"$1",
-		"write-as-is":true,
-		"args-tratament":
-		[
-			null,
-			{
-				"apply-rules":
-				[
-					"rule_name2", "rule_name3"
-				]
-			},
-			{
-				"name":"rule_name",
-				"find":"regex",
-				"replace":"text-to-replace",
-				"apply-rules":
-				[
-					"rule_name2"
-				],
-				"case-conversion-on-replace":true,
-				"case-conversion-options":["upper","lower", "asis"],
-				"default-case-conversion":"upper",
-				"space_size":"$1",
-				"args-tratament": []
-			},
-			{
-				"write-as-is":true
-			}
-			
-		]
-	},
-	{
-		"name":"rule_name2"
-	},
-	{
-		"name":"rule_name3"
-	}
-]
+{
+	"rules":[
+		{
+			"name":"rule_name",
+			"find":"regex",
+			"replace":"text-to-replace",
+			"apply-rules":
+			[
+				{"name":"rule_name2"},
+				{"name":"rule_name3"}
+			],
+			"case-conversion-on-replace":true,
+			"case-conversion-options":
+			[
+				{"option":"upper"},
+				{"option":"lower"},
+				{"option":"as-is"}
+			],
+			"default-case-conversion":"upper",
+			"space_size":1,
+			"write-as-is":true,
+			"args-tratament":
+			[
+				{
+					"index": 1,
+					"apply-rules":
+					[
+						{"name":"rule_name2"},
+						{"name":"rule_name3"}
+					]
+				},
+				{
+					"index": 2,
+					"name":"rule_name",
+					"find":"regex",
+					"replace":"text-to-replace",
+					"apply-rules":
+					[
+						{"name":"rule_name2"},
+						{"name":"rule_name3"}
+					],
+					"case-conversion-on-replace":true,
+					"case-conversion-options":
+					[
+						{"option":"upper"},
+						{"option":"lower"},
+						{"option":"as-is"}
+					],
+					"default-case-conversion":"upper",
+					"space_size":1,
+					"args-tratament": []
+				},
+				{
+					"write-as-is":true
+				}
+				
+			]
+		},
+		{
+			"name":"rule_name2"
+		},
+		{
+			"name":"rule_name3"
+		}
+	]
+}

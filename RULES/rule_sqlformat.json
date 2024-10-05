@@ -1,0 +1,60 @@
+{
+	"rules":[
+		{
+			"name":"Apply All Rules",
+			"apply-rules":
+			[
+				"Same Case to Reserved Words",
+				"Plan Content",
+				"Format DQL",
+				"(TO-DO)Format DML",
+				"(TO-DO)Format DDL"
+			],
+		},
+		{
+			"name":"Same Case to Reserved Words",
+			"find":"(?i)\b(select|from|where|insert|into|update|delete|join|inner|left|right|full|outer|on|group|order|by|having|create|drop|alter|table|view|index|primary|foreign|key|truncate|distinct|union|all|values|set|null|not|null|if|exists|between|in|like|is|and|or|as|case|when|then|else|end|limit|offset|top)\b",
+			"case-conversion-on-replace":true,
+			"case-conversion-options":["upper","lower", "asis"],
+			"default-case-conversion":"upper"
+		},
+		{
+			"name":"Plan Content",
+			"find":"\s*",
+			"replace":" ",
+		},
+		{
+			"name":"Format DQL",
+			"find":"(?i)(\bselect\b.*?)(?=\b(select|alter|insert|update|delete|create|drop)\b|\z)",
+			"args-tratament":
+			[
+				{
+					"apply-rules":
+					[
+						"DQL - Fields Rule",
+						"(TO-DO)DQL|DML - Tables",
+						"(TO-DO)DQL|DML - Joins",
+						"(TO-DO)DQL|DML - Filter"
+					]
+				}
+			],
+		},
+		{
+			"name":"DQL - Fields Rule",
+			"find":"(?i)(\bselect\b\s|\bgroup\sby\b\s|\border\sby\b\s)+\s*(.*?)(?:\bfrom\b|\binto\b|\bhaving\b|\border\b|\z)",
+			"space_size":"$1"
+			"args-tratament":
+			[
+				{
+					"write-as-is":true
+				},
+				{
+						"name":"(Internal Rule) Fields at correct place",
+						"find":"\s*\,\s*",
+						"replace":",\r\n{spaces}",
+				}
+			]
+		}
+		
+	]
+}
